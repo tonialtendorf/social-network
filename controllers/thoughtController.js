@@ -89,15 +89,15 @@ module.exports = {
   },
   // Remove video response
   removeThoughtResponse(req, res) {
-    Video.findOneAndUpdate(
-      { _id: req.params.videoId },
-      { $pull: { reactions: { responseId: req.params.responseId } } },
+    Thought.findOneAndUpdate(
+      { _id: req.params.thoughtId },
+      { $pull: { reactions: { reactionsId: req.params.reactionsId } } },
       { runValidators: true, new: true }
     )
-      .then((video) =>
-        !video
-          ? res.status(404).json({ message: 'No video with this id!' })
-          : res.json(video)
+      .then((thought) =>
+        !thought
+          ? res.status(404).json({ message: 'No thought with this id!' })
+          : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
   },
