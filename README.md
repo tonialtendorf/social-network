@@ -11,7 +11,7 @@ The challenge was to create an application that connects to mongoose DB and the 
 
 To view the video walk through follow the following link: 
 
-[![demo](https://img.youtube.com/vi/ll6ZDLfOYso/0.jpg)](https://www.youtube.com/watch?v=ll6ZDLfOYso)
+[![demo](https://img.youtube.com/vi/_Y5tynYk_V0/0.jpg)](https://www.youtube.com/watch?v=_Y5tynYk_V0)
 
 
 

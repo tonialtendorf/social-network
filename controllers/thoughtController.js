@@ -4,7 +4,11 @@ module.exports = {
   getThought(req, res) {
     Thought.find()
       .sort({ createdAt: -1})
-      .catch((err) => res.status(500).json(err));
+      .then(thoughts => res.json(thoughts))
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   },
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
@@ -87,7 +91,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // Remove video response
+  // Remove reaction response
   removeThoughtResponse(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
